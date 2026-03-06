@@ -92,9 +92,9 @@ The bot will print its progress step-by-step. Press **Ctrl+C** at any time to st
 
 ## ⏰ Auto-Schedule (Windows Task Scheduler)
 
-To make the bot run automatically every weekday at **7:00 PM**, run the included PowerShell script **once** as Administrator:
+To make the bot run automatically at your class time, run the included PowerShell script **once** as Administrator:
 
-1. Open `schedule_bot.ps1` and set your paths:
+1. Open `schedule_bot.ps1` and set your paths and preferred schedule time:
 ```powershell
 $BotDir = 'C:\path\to\lpu_bot'
 $BotScript = 'C:\path\to\lpu_bot\lpu_join_class.py'
@@ -105,8 +105,8 @@ $BotScript = 'C:\path\to\lpu_bot\lpu_join_class.py'
 .\schedule_bot.ps1
 ```
 
-This registers a Windows Scheduled Task named `LPU_ClassBot_7PM` that:
-- Runs **Monday – Friday at 7:00 PM**
+This registers a Windows Scheduled Task that:
+- Runs on your configured days and time
 - Has a **2-hour execution limit**
 - Only runs if a **network connection** is available
 - Starts automatically even if you forgot
