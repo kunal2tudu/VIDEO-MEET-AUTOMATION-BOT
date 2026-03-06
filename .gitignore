@@ -1,0 +1,9 @@
+login_dump.html
+
+*.png
+
+__pycache__/
+*.pyc
+*.pyo
+
+.env
