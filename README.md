@@ -94,13 +94,20 @@ The bot will print its progress step-by-step. Press **Ctrl+C** at any time to st
 
 To make the bot run automatically at your class time, run the included PowerShell script **once** as Administrator:
 
-1. Open `schedule_bot.ps1` and set your paths and preferred schedule time:
+1. Open `schedule_bot.ps1` and fill in the variables at the top:
+
 ```powershell
-$BotDir = 'C:\path\to\lpu_bot'
-$BotScript = 'C:\path\to\lpu_bot\lpu_join_class.py'
+$TaskName     = 'LPU_ClassBot'                           # Name for the scheduled task
+$BotDir       = 'C:\path\to\lpu_bot'                     # Folder where the bot lives
+$BotScript    = 'C:\path\to\lpu_bot\lpu_join_class.py'   # Full path to the main script
+$ScheduleTime = '6:00PM'                                  # Time to run (before class starts)
+$ScheduleDays = @('Monday', 'Wednesday')                  # Days your class runs
 ```
 
-2. Run it in PowerShell as Administrator:
+> **Valid day names:** `Monday` `Tuesday` `Wednesday` `Thursday` `Friday` `Saturday` `Sunday`
+
+2. Run it in PowerShell **as Administrator**:
+
 ```powershell
 .\schedule_bot.ps1
 ```
